@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetario Casero | Yenifer Melgar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <style>
+        :root {
+      --carbon: #2f2d2b;
+      --arena: #d9d2c5;
+      --hueso: #f5f2ec;
+      --menta: #d3ebdd;
+      --lavanda: #e1dbf2;
+      --limon: #fbf1c7;
+      --bs-body-bg: var(--hueso);
+      --bs-body-color: var(--carbon);
+      --bs-link-color-rgb: 47, 45, 43;
+      --bs-border-color: var(--arena);
+    }
+    .btn-primary { --bs-btn-bg: var(--carbon); --bs-btn-border-color: var(--carbon); --bs-btn-color: #fff;
+      --bs-btn-hover-bg: #1c1b1a; --bs-btn-hover-border-color: #1c1b1a; --bs-btn-hover-color: #fff;
+      --bs-btn-active-bg: #1c1b1a; --bs-btn-active-border-color: #1c1b1a; }
+    .btn-outline-primary { --bs-btn-color: var(--carbon); --bs-btn-border-color: var(--carbon);
+      --bs-btn-hover-bg: var(--carbon); --bs-btn-hover-border-color: var(--carbon); --bs-btn-hover-color: #fff;
+      --bs-btn-active-bg: var(--carbon); --bs-btn-active-border-color: var(--carbon); }
+    .hero-panel { background: var(--menta); }
+    .nav-link { --bs-nav-link-color: var(--carbon); --bs-nav-link-hover-color: #000; }
+    .nav-link.link-secondary { color: #6b665f !important; }
+    .col:nth-child(1) > .card > .card-header { background: var(--menta); }
+    .col:nth-child(2) > .card > .card-header { background: var(--lavanda); }
+    .col:nth-child(3) > .card > .card-header { background: var(--limon); }
+    .dato { background: var(--menta); color: var(--carbon); font-weight: 500; }
+    .dato:nth-child(2) { background: var(--lavanda); }
+    .dato:nth-child(3) { background: var(--limon); }
+    .accordion { --bs-accordion-bg: var(--hueso); --bs-accordion-active-bg: var(--lavanda);
+      --bs-accordion-active-color: var(--carbon); --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem rgba(138,154,139,.5); }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+        <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0"> <a href="#inicio" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <span class="fs-4 fw-bold">Recetario Casero</span> </a> </div>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
+        <li><a href="#recetas" class="nav-link px-2">Recetas</a></li>
+        <li><a href="#consejos" class="nav-link px-2">Consejos</a></li>
+      </ul>
+      <div class="col-md-3 text-end"> <a href="#recetas" class="btn btn-primary">Recetas</a> </div>
+    </header>
+
+    <main>
+            <div class="rounded-4 hero-panel px-3 px-md-4 py-4" id="inicio">
+      <div class="row flex-lg-row-reverse align-items-center g-4 py-3">
+        <div class="col-10 col-sm-8 col-lg-6"> <img src="Imagenes/Recetas_tipicas.png"
+            class="d-block mx-lg-auto img-fluid rounded-3" alt="Plato de comida" width="700" height="400" loading="lazy"> </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Recetas sencillas de casa</h1>
+          <p class="lead">Platos típicos de Honduras explicados paso a paso, con ingredientes que se consiguen en cualquier mercado o supermercado.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start"> <a href="#recetas"
+              class="btn btn-primary btn-lg px-4 me-md-2">Ver recetas</a> <a href="#consejos"
+              class="btn btn-outline-secondary btn-lg px-4">Consejos</a> </div>
+        </div>
+      </div>
+      </div>
+
+            <div class="p-3 pb-md-4 mx-auto text-center mt-5" id="recetas">
+        <h2 class="display-5 fw-normal">Recetas</h2>
+        <p class="fs-5 text-body-secondary">Cinco platos tradicionales: haga clic en el nombre para ver los ingredientes y la preparación.</p>
+      </div>
+
+            <div class="row justify-content-center mb-5">
+        <div class="col-lg-9">
+          <div class="accordion" id="listaRecetas">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#baleadas" aria-expanded="true" aria-controls="baleadas">Baleadas</button>
+              </h3>
+              <div id="baleadas" class="accordion-collapse collapse show" data-bs-parent="#listaRecetas">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge dato">20 minutos</span>
+                    <span class="badge dato">4 porciones</span>
+                    <span class="badge dato">Fácil</span>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-5">
+                      <h4 class="h6">Ingredientes</h4>
+                      <ul>
+                        <li>4 tortillas de harina</li>
+                        <li>1 taza de frijoles rojos fritos</li>
+                        <li>1/2 taza de queso seco rallado</li>
+                        <li>1/2 taza de mantequilla (crema)</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-7">
+                      <h4 class="h6">Preparación</h4>
+                      <ol>
+                        <li>Caliente las tortillas en un sartén seco por ambos lados.</li>
+                        <li>Unte los frijoles fritos sobre cada tortilla.</li>
+                        <li>Agregue el queso rallado y la mantequilla.</li>
+                        <li>Doble la tortilla por la mitad y sirva caliente.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#torrejas" aria-expanded="false" aria-controls="torrejas">Torrejas</button>
+              </h3>
+              <div id="torrejas" class="accordion-collapse collapse" data-bs-parent="#listaRecetas">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge dato">40 minutos</span>
+                    <span class="badge dato">6 porciones</span>
+                    <span class="badge dato">Media</span>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-5">
+                      <h4 class="h6">Ingredientes</h4>
+                      <ul>
+                        <li>6 rebanadas gruesas de pan del día anterior</li>
+                        <li>3 huevos (claras y yemas separadas)</li>
+                        <li>Aceite para freír</li>
+                        <li>1 taza de panela raspada</li>
+                        <li>2 tazas de agua</li>
+                        <li>1 rajita de canela</li>
+                        <li>3 clavos de olor</li>
+                        <li>1/4 taza de pasas (opcional)</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-7">
+                      <h4 class="h6">Preparación</h4>
+                      <ol>
+                        <li>Hierva el agua con la panela, la canela y los clavos por unos 15 minutos para hacer la miel.</li>
+                        <li>Bata las claras a punto de nieve y agregue las yemas con cuidado.</li>
+                        <li>Pase cada rebanada de pan por la mezcla de huevo.</li>
+                        <li>Fría las rebanadas en aceite caliente hasta que estén doradas por ambos lados y escúrralas.</li>
+                        <li>Coloque las torrejas en la miel con las pasas y cocine a fuego bajo unos 5 minutos.</li>
+                        <li>Deje reposar y sirva tibias o frías.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chilate" aria-expanded="false" aria-controls="chilate">Chilate</button>
+              </h3>
+              <div id="chilate" class="accordion-collapse collapse" data-bs-parent="#listaRecetas">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge dato">30 minutos</span>
+                    <span class="badge dato">4 porciones</span>
+                    <span class="badge dato">Fácil</span>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-5">
+                      <h4 class="h6">Ingredientes</h4>
+                      <ul>
+                        <li>1 taza de maíz tostado molido</li>
+                        <li>4 tazas de agua</li>
+                        <li>1 rajita de canela</li>
+                        <li>2 clavos de olor</li>
+                        <li>1/2 taza de panela raspada (o azúcar)</li>
+                        <li>1 pizca de sal</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-7">
+                      <h4 class="h6">Preparación</h4>
+                      <ol>
+                        <li>Disuelva el maíz tostado molido en 1 taza de agua fría.</li>
+                        <li>Hierva las otras 3 tazas de agua con la canela y los clavos por 5 minutos.</li>
+                        <li>Agregue el maíz disuelto colándolo y mueva sin parar para que no se formen grumos.</li>
+                        <li>Cocine de 10 a 15 minutos hasta que espese un poco.</li>
+                        <li>Endulce con la panela y la sal, y sirva caliente.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nacatamales" aria-expanded="false" aria-controls="nacatamales">Nacatamales</button>
+              </h3>
+              <div id="nacatamales" class="accordion-collapse collapse" data-bs-parent="#listaRecetas">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge dato">3 horas</span>
+                    <span class="badge dato">8 porciones</span>
+                    <span class="badge dato">Difícil</span>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-5">
+                      <h4 class="h6">Ingredientes</h4>
+                      <ul>
+                        <li>2 libras de masa de maíz</li>
+                        <li>1/2 taza de manteca de cerdo (o aceite)</li>
+                        <li>2 tazas de caldo de pollo o cerdo</li>
+                        <li>1 cucharada de achiote disuelto en un poco de caldo</li>
+                        <li>1 libra de carne de cerdo o pollo en trozos</li>
+                        <li>1/2 taza de arroz remojado 30 minutos</li>
+                        <li>2 papas en rodajas</li>
+                        <li>2 tomates y 1 cebolla en rodajas</li>
+                        <li>1 chile dulce en tiras</li>
+                        <li>Hojas de plátano pasadas por el fuego e hilo</li>
+                        <li>Sal al gusto</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-7">
+                      <h4 class="h6">Preparación</h4>
+                      <ol>
+                        <li>Sazone la carne con sal y cocínela en un poco de agua hasta que esté casi lista.</li>
+                        <li>Mezcle la masa con la manteca, el caldo, el achiote y la sal hasta que quede suave y sin grumos.</li>
+                        <li>Extienda una porción de masa sobre cada hoja de plátano.</li>
+                        <li>Ponga encima un trozo de carne, un poco de arroz, papa, tomate, cebolla y chile.</li>
+                        <li>Cubra con un poco más de masa, doble la hoja y amarre el paquete con hilo.</li>
+                        <li>Cocine los nacatamales en una olla grande con agua caliente, tapados, por unas 2 horas.</li>
+                        <li>Deje reposar unos minutos y sirva calientes.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#enchiladas" aria-expanded="false" aria-controls="enchiladas">Enchiladas hondureñas</button>
+              </h3>
+              <div id="enchiladas" class="accordion-collapse collapse" data-bs-parent="#listaRecetas">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge dato">40 minutos</span>
+                    <span class="badge dato">4 porciones</span>
+                    <span class="badge dato">Media</span>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-5">
+                      <h4 class="h6">Ingredientes</h4>
+                      <ul>
+                        <li>8 tostadas de maíz (tortillas fritas)</li>
+                        <li>1/2 libra de carne molida de res</li>
+                        <li>1/2 cebolla y 1 chile dulce picados</li>
+                        <li>2 tomates picados</li>
+                        <li>1 taza de repollo picado fino</li>
+                        <li>1/2 taza de queso seco rallado</li>
+                        <li>2 huevos duros en rodajas</li>
+                        <li>Salsa de tomate</li>
+                        <li>Sal y pimienta al gusto</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-7">
+                      <h4 class="h6">Preparación</h4>
+                      <ol>
+                        <li>Cocine la cebolla, el chile y los tomates en un sartén con un poco de aceite.</li>
+                        <li>Agregue la carne molida, sal y pimienta, y cocine hasta que esté lista.</li>
+                        <li>Coloque las tostadas en un plato y ponga la carne encima.</li>
+                        <li>Agregue el repollo, la salsa de tomate y el huevo en rodajas.</li>
+                        <li>Termine con el queso rallado y sirva de inmediato.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+            <div class="p-3 pb-md-4 mx-auto text-center" id="consejos">
+        <h2 class="display-5 fw-normal">Consejos de cocina</h2>
+        <p class="fs-5 text-body-secondary">Tres ideas básicas para que las recetas le salgan mejor.</p>
+      </div>
+
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h3 class="h4 my-0 fw-normal">Antes de cocinar</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-0">
+                <li>Lea la receta completa</li>
+                <li>Lave bien los ingredientes</li>
+                <li>Corte y mida todo antes de encender la estufa</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h3 class="h4 my-0 fw-normal">Mientras cocina</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-0">
+                <li>Agregue la sal poco a poco</li>
+                <li>Pruebe antes de servir</li>
+                <li>Fría a fuego medio y con cuidado</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h3 class="h4 my-0 fw-normal">Al servir</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-0">
+                <li>Sirva caliente lo que se come caliente</li>
+                <li>Escurra lo frito sobre papel absorbente</li>
+                <li>Deje reposar las masas unos minutos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="col mb-3"> <a href="#inicio" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+          > <span class="fs-5 fw-bold">Recetario Casero</span> </a>
+        <p class="text-body-secondary">© 2026 Yenifer Melgar · UNICAH</p>
+      </div>
+      <div class="col mb-3"></div>
+      <div class="col mb-3">
+        <h5>Recetas</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#baleadas" class="nav-link p-0 text-body-secondary">Baleadas</a></li>
+          <li class="nav-item mb-2"><a href="#torrejas" class="nav-link p-0 text-body-secondary">Torrejas</a></li>
+          <li class="nav-item mb-2"><a href="#chilate" class="nav-link p-0 text-body-secondary">Chilate</a></li>
+          <li class="nav-item mb-2"><a href="#nacatamales" class="nav-link p-0 text-body-secondary">Nacatamales</a></li>
+          <li class="nav-item mb-2"><a href="#enchiladas" class="nav-link p-0 text-body-secondary">Enchiladas</a></li>
+        </ul>
+      </div>
+      <div class="col mb-3">
+        <h5>Secciones</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#inicio" class="nav-link p-0 text-body-secondary">Inicio</a></li>
+          <li class="nav-item mb-2"><a href="#recetas" class="nav-link p-0 text-body-secondary">Recetas</a></li>
+          <li class="nav-item mb-2"><a href="#consejos" class="nav-link p-0 text-body-secondary">Consejos</a></li>
+        </ul>
+      </div>
+      <div class="col mb-3">
+        <h5>Contacto</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://github.com/yenilu24" class="nav-link p-0 text-body-secondary">github.com/yenilu24</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
